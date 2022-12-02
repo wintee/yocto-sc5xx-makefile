@@ -142,11 +142,13 @@ install_ramdisk_full_common:
 	cp $(DEPLOY_DIR)/$(TARGET_PROC)-$(TARGET_PROC).dtb $(TFTPDIR)
 
 install_ramdisk: install_common
-	cp $(DEPLOY_DIR)/adsp-sc5xx-ramdisk-adsp-$(TARGET_PROC)-$(TARGET_PROC).cpio.xz.u-boot $(TFTPDIR)/ramdisk.cpio.xz.u-boot
+	cp $(DEPLOY_DIR)/adsp-sc5xx-ramdisk-adsp-$(TARGET_PROC)-$(TARGET_BOARD).cpio.xz.u-boot $(TFTPDIR)/ramdisk.cpio.xz.u-boot
+	cp $(DEPLOY_DIR}/fitImage $(TFTPDIR)
 
 # Full is TBD
 install_full: install_common
-	cp $(DEPLOY_DIR)/adsp-sc5xx-ramdisk-adsp-$(TARGET_PROC)-$(TARGET_PROC).cpio.xz.u-boot $(TFTPDIR)/ramdisk.cpio.xz.u-boot
+	cp $(DEPLOY_DIR)/adsp-sc5xx-ramdisk-adsp-$(TARGET_PROC)-$(TARGET_BOARD).cpio.xz.u-boot $(TFTPDIR)/ramdisk.cpio.xz.u-boot
+	cp $(DEPLOY_DIR}/fitImage $(TFTPDIR)
 
 # install_nfs is only supported in this makefile after a full build
 # this rule extracts the filesystem contents into the mountable romfs directory
