@@ -152,5 +152,5 @@ install_full: install_common
 # this rule extracts the filesystem contents into the mountable romfs directory
 # If you want to use it with ramboot, hack the command below.
 install_nfs:
-	tar -xf $(DEPLOY_DIR)/adsp-sc5xx-full-adsp-$(TARGET_PROC)-$(TARGET_BOARD).tar.xz -C $(NFSDIR)
+	sudo tar -xf $(DEPLOY_DIR)/adsp-sc5xx-full-adsp-$(TARGET_PROC)-$(TARGET_BOARD).tar.xz -C $(NFSDIR)
 
